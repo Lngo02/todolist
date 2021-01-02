@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa'; 
 import { Projects } from '../Projects';
 import { useSelectedProjectValue} from '../../context';
-import {AddProject} from '../AddProject';
+import { AddProject } from '../AddProject';
 
 export const Sidebar = () => {
     const { setSelectedProject } = useSelectedProjectValue();
@@ -17,7 +17,10 @@ export const Sidebar = () => {
     return (
         <div className="sidebar" data-testid="sidebar">
             <ul className="sidebar__generic">
-                <li data-testid="inbox" className="inbox">
+                <li 
+                    data-testid="inbox" 
+                    className={active === 'inbox' ? 'active' : undefined}
+                >
                     <div
                         data-testid="inbox-action"
                         role="button"
@@ -37,22 +40,50 @@ export const Sidebar = () => {
                     </div>
                     
                 </li>
-                <li data-testid="today" className="today">
-                    <span>
-                        <FaRegCalendar/>
-                    </span>
-                    <span>Today</span>
+                <li 
+                    data-testid="today" 
+                    className={active === 'today' ? 'active' : undefined}
+                >
+                    <div
+                        data-testid="today-action"
+                        role="button"
+                        onClick={() => {
+                            setActive('today');
+                            setSelectedProject('TODAY');
+                        }}>
+                        <span>
+                            <FaRegCalendar/>
+                        </span>
+                        <span>Today</span>
+                    </div>
+                    
                 </li>
-                <li data-testid="next_7" className="next_7">
-                    <span>
-                        <FaRegCalendarAlt/>
-                    </span>
-                    <span>Next 7 days</span>
+                <li 
+                    data-testid="next_7" 
+                    className={active === 'next_7' ? 'active' : undefined}
+                >
+                    <div
+                        data-testid=""next_7-action
+                        role="button"
+                        onClick={() => {
+                            setActive('next_7');
+                            setSelectedProject('NEXT_7');
+                        }}
+                    >
+                        <span>
+                            <FaRegCalendarAlt/>
+                        </span>
+                        <span>Next 7 days</span>
+                    </div>
                 </li>
             </ul>
 
-            <div className="sidebar__middle">
-                <span><FaChevronDown/></span>
+            <div 
+                className="sidebar__middle"
+                role="button"
+                onClick={() => setShowProjects(!showProjects)}
+            >
+                <span><FaChevronDown className={!showProjects ? 'hidden-projects' : undefined}/></span>
                 <h2>Projects</h2>
             </div>
 
