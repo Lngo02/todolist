@@ -18,10 +18,24 @@ export const Sidebar = () => {
         <div className="sidebar" data-testid="sidebar">
             <ul className="sidebar__generic">
                 <li data-testid="inbox" className="inbox">
-                    <span>
-                        <FaInbox/>
-                    </span>
-                    <span>Inbox</span>
+                    <div
+                        data-testid="inbox-action"
+                        role="button"
+                        onClick={() => {
+                            setActive('inbox');
+                            setSelectedProject('INBOX');
+                        }}
+                        onKeyDown={() => {
+                            setActive('inbox');
+                            setSelectedProject('INBOX');
+                        }}
+                        >
+                            <span>
+                                <FaInbox/>
+                            </span>
+                            <span>Inbox</span>
+                    </div>
+                    
                 </li>
                 <li data-testid="today" className="today">
                     <span>

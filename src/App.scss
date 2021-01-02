@@ -266,10 +266,9 @@ header {
     padding-right: 15px; 
 
     &:hover .sidebar__project-delete {
-      /*display: -webkit-box;
+      display: -webkit-box;
       display: -ms-flexbox;
-      display: flex;*/
-      display: block;
+      display: flex;
     }
   }
 
@@ -383,8 +382,8 @@ header {
       cursor: pointer;
       line-height: 1.50;
       font-size: 15px;
-      /*padding-left: 0;
-      padding-right: 0;*/
+      padding-left: 0;
+      padding-right: 0;
 
       div:nth-child(1) {
         display: -webkit-box;
