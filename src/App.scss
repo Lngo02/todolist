@@ -132,12 +132,21 @@ $generic-bg: #db4c3f;
 /* Darkmode
   ============================================ */
 .darkmode {
+  /** Controls main
+  background-color: #282828;
+  */
   header {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
     background-color: #282828;
     border-color: transparent;
   }
+
+  /** Change for dark mode
+  body, .tasks, .sidebar {
+    background-color: #282828;
+  }
+  */
 }
 
 /* Header
