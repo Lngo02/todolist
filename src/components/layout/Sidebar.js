@@ -63,7 +63,7 @@ export const Sidebar = () => {
                     className={active === 'next_7' ? 'active' : undefined}
                 >
                     <div
-                        data-testid=""next_7-action
+                        data-testid="next_7-action"
                         role="button"
                         onClick={() => {
                             setActive('next_7');
