@@ -19,16 +19,25 @@ export const Projects = ({ activeValue = null }) => {
                         ? 'active sidebar__project'
                         : 'sidebar__project'
                 }
-                onClick={() => {
-                    setActive(project.projectId);
-                    setSelectedProject(project.projectId);
-                }}
-                onKeyDown={() => {
-                    setActive(project.projectId);
-                    setSelectedProject(project.projectId);
-                }}
             >
-                <IndividualProject project={project}/>    
+                <div
+                    role="button"
+                    data-testid="project-action"
+                    tabIndex={0}
+                    aria-label={`Select ${project.name} as the task project`}
+                    onClick={() => {
+                        setActive(project.projectId);
+                        setSelectedProject(project.projectId);
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            setActive(project.projectId);
+                            setSelectedProject(project.projectId);
+                        }
+                    }}
+                >
+                    <IndividualProject project={project}/>
+                </div>          
             </li>
         ))
     );

@@ -63,6 +63,12 @@ export const AddTask = ({
                     className="add-task__shallow"
                     data-testid="show-main-action"
                     onClick={() => setShowMain(!showMain)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') setShowMain(!showMain);
+                    }}
+                    tabIndex={0}
+                    aria-label="Add task"
+                    role="button"
                 >
                     <span className="add-task__plus">+</span>
                     <span className="add-task__text">Add Task</span>
@@ -83,6 +89,15 @@ export const AddTask = ({
                                         setShowProjectOverlay(false);
                                         setShowQuickAddTask(false);
                                     }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            setShowMain(false);
+                                            setShowProjectOverlay(false);
+                                            setShowQuickAddTask(false);
+                                        }
+                                    }}
+                                    tabIndex={0}
+                                    role="button"
                                 >
                                     X
                                 </span>
@@ -101,10 +116,11 @@ export const AddTask = ({
                     />
                     <input
                         className="add-task__content"
+                        aria-label="Enter your task"
                         data-testid="add-task-content"
                         type="text"
                         value={task}
-                        onChange={e => setTask(e.target.value)}
+                        onChange={(e) => setTask(e.target.value)}
                     />
                     <button
                         type="button"
@@ -127,6 +143,15 @@ export const AddTask = ({
                                 setShowMain(false);
                                 setShowProjectOverlay(false);
                             }}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setShowMain(false);
+                                    setShowProjectOverlay(false);
+                                }
+                            }}
+                            aria-label="Cancel adding a task"
+                            tabIndex={0}
+                            role="button"
                         >
                             Cancel
                         </span>
@@ -136,6 +161,11 @@ export const AddTask = ({
                         className="add-task__project"
                         data-testid="show-project-overlay"
                         onClick={() => setShowProjectOverlay(!showProjectOverlay)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') setShowProjectOverlay(!showProjectOverlay);
+                        }}
+                        tabIndex={0}
+                        role="button"
                     >
                         <FaRegListAlt />
                     </span>
@@ -143,6 +173,11 @@ export const AddTask = ({
                         className="add-task__date"
                         data-testid="show-task-date-overlay"
                         onClick={() => setShowTaskDate(!showTaskDate)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') setShowTaskDate(!showTaskDate);
+                        }}
+                        tabIndex={0}
+                        role="button"
                     >
                         <FaRegCalendarAlt />
                     </span>

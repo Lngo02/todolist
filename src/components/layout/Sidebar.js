@@ -23,14 +23,18 @@ export const Sidebar = () => {
                 >
                     <div
                         data-testid="inbox-action"
+                        aria-label="Show inbox tasks"
+                        tabIndex={0}
                         role="button"
                         onClick={() => {
                             setActive('inbox');
                             setSelectedProject('INBOX');
                         }}
-                        onKeyDown={() => {
-                            setActive('inbox');
-                            setSelectedProject('INBOX');
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter'){
+                                setActive('inbox');
+                                setSelectedProject('INBOX');
+                            }
                         }}
                         >
                             <span>
@@ -46,11 +50,20 @@ export const Sidebar = () => {
                 >
                     <div
                         data-testid="today-action"
+                        aria-label="Show today's tasks"
+                        tabIndex={0}
                         role="button"
                         onClick={() => {
                             setActive('today');
                             setSelectedProject('TODAY');
-                        }}>
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                setActive('today');
+                                setSelectedProject('TODAY');
+                            }
+                        }}    
+                    >
                         <span>
                             <FaRegCalendar/>
                         </span>
@@ -64,10 +77,18 @@ export const Sidebar = () => {
                 >
                     <div
                         data-testid="next_7-action"
+                        aria-label="Show tasks for the next 7 days"
+                        tabIndex={0}
                         role="button"
                         onClick={() => {
                             setActive('next_7');
                             setSelectedProject('NEXT_7');
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                setActive('next_7');
+                                setSelectedProject('NEXT_7');
+                            }
                         }}
                     >
                         <span>
@@ -80,8 +101,13 @@ export const Sidebar = () => {
 
             <div 
                 className="sidebar__middle"
+                aria-label="Show/hid projects"
+                tabIndex={0}
                 role="button"
                 onClick={() => setShowProjects(!showProjects)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') setShowProjects(!showProjects);
+                }}
             >
                 <span><FaChevronDown className={!showProjects ? 'hidden-projects' : undefined}/></span>
                 <h2>Projects</h2>
