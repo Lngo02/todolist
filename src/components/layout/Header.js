@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
+import { 
+    FiCloudLightning,
+    FiPlus,
+    FiPlusSquare
+ } from 'react-icons/fi';
 import { AddTask } from '../AddTasks';
 
 export const Header = ({ darkMode, setDarkMode }) => {
@@ -10,7 +15,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
         <header className="header" data-testid="header">
             <nav>
                 <div className="logo">
-                    <img src="/images/logo.png" alt="Todolist"/>
+                    <img src="/images/logo.png" alt="Toodle"/>
                 </div>
                 <div className="settings">
                     <ul>
@@ -23,7 +28,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
                                     setShouldShowMain(true);
                                 }}
                             >
-                                +
+                                <FiPlus />
                             </button>
                         </li>
                         <li className="settings__darkmode">
@@ -32,7 +37,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
                                 type="button"
                                 onClick={() => setDarkMode(!darkMode)}
                             >
-                               <FaPizzaSlice /> 
+                               <FiCloudLightning /> 
                             </button>
                             
                         </li>

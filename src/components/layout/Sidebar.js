@@ -5,6 +5,14 @@ import {
     FaRegCalendarAlt,
     FaRegCalendar,
 } from 'react-icons/fa'; 
+import {
+    FiCalendar,
+    FiChevronDown,
+    FiArchive
+} from 'react-icons/fi';
+import {
+    FiInbox
+} from 'react-icons/fi';
 import { Projects } from '../Projects';
 import { useSelectedProjectValue} from '../../context';
 import { AddProject } from '../AddProject';
@@ -38,7 +46,7 @@ export const Sidebar = () => {
                         }}
                         >
                             <span>
-                                <FaInbox/>
+                                <FiInbox/>
                             </span>
                             <span>Inbox</span>
                     </div>
@@ -65,7 +73,7 @@ export const Sidebar = () => {
                         }}    
                     >
                         <span>
-                            <FaRegCalendar/>
+                            <FiCalendar/>
                         </span>
                         <span>Today</span>
                     </div>
@@ -92,7 +100,7 @@ export const Sidebar = () => {
                         }}
                     >
                         <span>
-                            <FaRegCalendarAlt/>
+                            <FiArchive />
                         </span>
                         <span>Next 7 days</span>
                     </div>
@@ -109,7 +117,7 @@ export const Sidebar = () => {
                     if (e.key === 'Enter') setShowProjects(!showProjects);
                 }}
             >
-                <span><FaChevronDown className={!showProjects ? 'hidden-projects' : undefined}/></span>
+                <span><FiChevronDown className={!showProjects ? 'hidden-projects' : undefined}/></span>
                 <h2>Projects</h2>
             </div>
 

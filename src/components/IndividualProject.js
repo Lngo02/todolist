@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
+import {
+  FiTrash,
+  FiTrash2
+} from 'react-icons/fi';
 import { useProjectsValue, useSelectedProjectValue } from '../context';
 import { firebase } from '../firebase';
 
@@ -35,7 +39,7 @@ export const IndividualProject = ({ project }) => {
         role="button"
         aria-label="Confirm deletion of project"
       >
-        <FaTrashAlt />
+        <FiTrash2 />
         {showConfirm && (
           <div className="project-delete-modal">
             <div className="project-delete-modal__inner">

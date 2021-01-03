@@ -15,8 +15,10 @@ body {
   padding: 0;
   line-height: 1;
   font-family: 'Roboto', sans-serif;
-  color: #202020;
-  background-color: #fafafa;
+  /*color: #202020;*/
+  /*background-color: #fafafa;*/
+  color: #3E3149;
+  background-color: #ffffff;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,6 +33,7 @@ ul {
 $generic-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 11px;
 $generic-border: 1px solid #f1f1f1;
 $generic-bg: #db4c3f;
+/*$generic-bg: #3744BD;*/
 
 /* Mixins
   ============================================ */
@@ -152,13 +155,14 @@ $generic-bg: #db4c3f;
 /* Header
   ============================================ */
 header {
-  border-bottom: solid 1px #ca2100;
-  background-color: $generic-bg;
+  /*border-bottom: solid 1px #ca2100;*/
+  /*background-color: $generic-bg;*/
+  background-color: #3744BD;
   -webkit-transition: height 200ms ease-in;
   transition: height 200ms ease-in;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  height: 44px;
+  height: 64px;
   z-index: 400;
   position: fixed;
   top: 0;
@@ -179,7 +183,7 @@ header {
     grid-row-gap: 0px;
     max-width: 922px;
     margin: auto;
-    height: 44px;
+    height: 64px;
 
     p, li {
       color: white;
@@ -214,12 +218,15 @@ header {
           text-align: center;
           vertical-align: middle;
           float: left;
+          margin-left: 10px;
+          margin-right: 10px;
 
           &:hover {
             border-radius: 3px;
             background-color: rgba(255,255,255,0.2);
           }
 
+          /*
           &.settings__add {
             margin-right: 15px;
             font-size: 30px;
@@ -230,7 +237,8 @@ header {
               cursor: pointer;
             }
           }
-
+          */
+          &.settings__add,
           &.settings__darkmode {
             button {
               @include transparent-button();
@@ -259,12 +267,13 @@ header {
   @include no-select();
   width: 266px;
   height: calc(100vh);
-  padding-top: 74px;
+  padding-top: 94px;
   position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
   border-right: $generic-border;
-  background-color: #fafafa;
+  /*background-color: #fafafa;*/
+  background-color: #ffffff;
 
   @include mq('900px') {
     display: none;
@@ -478,7 +487,7 @@ header {
   vertical-align: top;
   padding-left: 40px;
   padding-right: 40px;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 84px;
 
   @include mq('900px') {
@@ -488,7 +497,7 @@ header {
 
   h2 {
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0 30px 20px 0;
   }
 

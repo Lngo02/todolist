@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
+import {
+    FiCalendar,
+    FiList,
+    FiX
+} from 'react-icons/fi';
 import moment from 'moment';
 import { firebase } from '../firebase';
 import { useSelectedProjectValue } from '../context';
@@ -99,7 +104,7 @@ export const AddTask = ({
                                     tabIndex={0}
                                     role="button"
                                 >
-                                    X
+                                    <FiX/>
                                 </span>
                             </div>
                         </>
@@ -167,7 +172,7 @@ export const AddTask = ({
                         tabIndex={0}
                         role="button"
                     >
-                        <FaRegListAlt />
+                        <FiList />
                     </span>
                     <span
                         className="add-task__date"
@@ -179,7 +184,7 @@ export const AddTask = ({
                         tabIndex={0}
                         role="button"
                     >
-                        <FaRegCalendarAlt />
+                        <FiCalendar />
                     </span>
                 </div>
             )}
