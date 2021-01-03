@@ -43,11 +43,6 @@ export const Tasks = () => {
                 ))}
             </ul>
             <AddTask/>
-            <div
-                className={tasks.length > 0 ? "empty-state" : "empty-state visible"}
-            >
-                {projectName === "Today" ? undefined : undefined}
-            </div>
         </div>
     );
 };
